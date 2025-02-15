@@ -20,7 +20,7 @@ export class UpdateUserDto{
 
     @IsOptional()
     @IsBoolean()
-    is_active: boolean;
+    is_active?: boolean;
 
     @ApiProperty({
       description: 'The role of the user',
@@ -29,5 +29,5 @@ export class UpdateUserDto{
     })
     @IsOptional()
     @IsEnum(eRole, { message: 'Role must be one of the following: admin, user, moderator' })
-    role: eRole;
+    role?: eRole;
 }
