@@ -10,6 +10,7 @@ This is a user management and file management REST API built using [NestJS](http
 - [Running the Application](#running-the-application)
 - [Environment Variables](#environment-variables)
 - [API Endpoints](#api-endpoints)
+- [Docker Compose Setup](#docker-compose-setup)
 - [Unit Tests](#unit-tests)
 - [Contributing](#contributing)
 - [License](#license)
@@ -111,3 +112,56 @@ BASE_URL=http://localhost:3000
 | GET |	/files/:id |	Download a file by ID |
 | DELETE |	/files/:id |	Delete a file by ID |
 
+## Docker Compose Setup
+
+To simplify the deployment and management of the application and its database, you can use Docker Compose. The docker-compose.yml file provided defines services for the application and a PostgreSQL database.
+
+### Docker Compose Services
+
+- app: The NestJS application.
+
+- postgres: PostgreSQL database service.
+
+### Running with Docker Compose
+
+To start the application and its dependencies using Docker Compose:
+
+- Ensure that Docker and Docker Compose are installed on your system.
+
+- Run the following command:
+
+```json 
+docker-compose up --build
+```
+
+This will build the Docker images and start the services. You can access the application at http://localhost:3000.
+
+### Stopping the Services
+
+To stop the running containers:
+
+'''json
+docker-compose down
+'''
+
+## Unit Tests
+
+Unit tests are written using Jest. To run the tests, use the following command:
+
+```json
+npm run test
+```
+
+For test coverage:
+
+```json
+npm run test:cov
+```
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
